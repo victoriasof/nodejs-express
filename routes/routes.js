@@ -9,6 +9,7 @@ const router = express.Router()
 //get for our /logout
 
 router.get('/', function (req, res) {
+    //console.log(req)
     res.render('index', {user: req.user});
 })
 

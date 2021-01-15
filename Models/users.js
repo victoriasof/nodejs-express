@@ -5,13 +5,10 @@ const passportLocalMongoose = require('passport-local-mongoose');
 // define the User model schema
 const UserSchema = new mongoose.Schema({
 
-    username: String,
-    email: {
-        type: String,
-        index: { unique: true }
-    },
+    username: {type: String, required: true, unique: true},
+    email: {type: String, required: true, unique: true},
+    date: {type: Date, default: Date.now}
 
-    date: String
 });
 
 UserSchema.plugin(passportLocalMongoose);
