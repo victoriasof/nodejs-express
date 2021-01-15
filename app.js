@@ -1,5 +1,5 @@
 const express = require('express')
-const port = 8080
+const port = 8888
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
@@ -27,9 +27,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new LocalStrategy(UserSchema.authenticate()));
+passport.serializeUser(UserSchema.serializeUser());
+passport.deserializeUser(UserSchema.deserializeUser());
+
+mongoose.connect('mongodb://localhost/testMongoDb', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:8080`)
+    console.log(`Example app listening at http://localhost:8888`)
 })
 
 

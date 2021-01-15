@@ -4,11 +4,13 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 // define the User model schema
 const UserSchema = new mongoose.Schema({
+
+    username: String,
     email: {
         type: String,
         index: { unique: true }
     },
-    username: String,
+
     date: String
 });
 
