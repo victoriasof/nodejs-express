@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title #{title}
+        body
+
+            if (user)
+                p Welcome, #{user.username}
+                a(href="/logout") Log out
+
+            else
+                h1 Not logged in, please register or login.
+                a(href="/register") Register
+                a(href="/login") Log in
