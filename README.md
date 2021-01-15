@@ -1,5 +1,7 @@
 # Node.js Workshop
 
+https://github.com/mcoulier/node-user-auth-workshop
+
 ## Learning objectives
 
 - Using dependencies
